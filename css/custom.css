@@ -1,3 +1,11 @@
 code {
   color: #A6E22E;
 }
+
+strong {
+  color: #E6DB74;
+}
+
+img {
+  border: 0 !important;
+}
