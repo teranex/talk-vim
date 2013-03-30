@@ -282,18 +282,57 @@
         <section data-markdown>
         ### Actually deleting something
         * `dd`: simply delete the current line (linewise)
-        * `dj`: delete current and next line (linewise)
+        * `d3j`: delete current and next 3 lines (linewise)
         * `dtx`: delete until the next **x** on the current line
         * `d2f(`: delete until the second occurance of **(**, including the **(** itself.
         * `d/foo<enter>`: delete until the next occurance of **foo**
         </section>
         </section>
 
-          <section data-markdown>
-          text-objects
-          </section>
+        <section>
+        <section data-markdown>
+        # text-objects
+        </section>
+        <section>
+        <img src="images/sulu.jpg">
+        </section>
+        <section data-markdown>
+        Text objects are **smarter** methods to tell Vim which **piece of text** you want to use, without manually having go to the start and the end of the text.
+        </section>
+        <section data-markdown>
+        Most text objects have an `i` and an `a` variant.
 
-          <section>This entire system is extensible. Plugins and mappings can add new motions and new commands</section>
+        * the `i`-variant selects _inside_ the text-object
+        * the `a`-variant selects _around_ the text-object
+        </section>
+        <section data-markdown>
+        ## some examples
+        * `viw`: visually select the current word
+        * `di"`: delete everything inside the quotes
+        * `ca(`: change everything inside parentheses, including the parentheses themselves.
+        </section>
+        </section>
+
+        <section>
+        <section data-markdown>
+        ## But there is more!
+        </section>
+        <section>This entire system is extensible. Plugins and mappings can add new motions, commands and text-objects which can be combined just like the built-in stuff.</section>
+        <section data-markdown>
+        ### An example
+        * The **tcomment** plugin adds the `gc` command to toggle comments
+        * **indent-text object** plugin adds the `ii` text-object to select everything with the same indent
+
+        ```
+if ($foo) {
+    doSomething();
+    thenDoSomethingElse();
+}
+        ```
+
+        With your cursor on doSomething, press `gcii` to comment everything inside the if-block.
+        </section>
+        </section>
 
         <section>
           <section>
@@ -308,6 +347,12 @@
             Repeats the last edit.
           </section>
 
+        </section>
+
+        <section>
+        =
+        >
+        <
         </section>
 
         <section>
