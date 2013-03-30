@@ -178,7 +178,12 @@
         </section>
 
         <section>
+        <section>
+        <h1>Vim speak</h1>
+        </section>
+        <section>
           In order to use Vim efficiently, you need to learn it's <strong>language</strong>. Learn to <strong>speak Vim</strong>
+        </section>
         </section>
 
         <section>
@@ -186,7 +191,7 @@
           <h2>Motions</h2>
           </section>
           <section>
-            <strong>Motions</strong> are how you move the cursor in Vim.
+          <strong>Motions</strong> are how you <strong>move</strong> the cursor in Vim.
           </section>
           <section>
             <img src="images/hjkl.jpg">
@@ -226,17 +231,69 @@
           * `;`: repeat
           * `,`: repeat on opposite direction
           </section>
-          <section>text-objects</section>
-          <section>search</section>
+          <section data-markdown>
+          ### search
+          * A search (`/`) in vim is also a motion.
+          * Repeating a search with `n` or `N` is also a search
+
+          ---
+          **Tip**: a very useful search command is `*`. It searches for the word under the cursor (and `#` to search backwards).
+          </section>
         </section>
 
         <section>
-          Commands
+        <section data-markdown>
+        ## Counts
+        Most motions take a count.
+
+        * `5f*`: find the fifth occurrence of ***** on the current line
+        * `3b`: move 3 words back
+        * `10j`: jump 10 lines down
+        * `2n`: jump to the second next search result (skipping the immediate next)
+        </section>
         </section>
 
         <section>
-          Counts
+        <section data-markdown>
+        ## Commands
         </section>
+        <section data-markdown>
+        **Commands** are how you make **do something** in Vim.
+        </section>
+        <section data-markdown>
+        ### Some commands
+        * `d`: delete something
+        * `c`: change something (delete and go to insert mode)
+        * `r`: replace a single character
+        * `v`: go to Visual mode
+        * `~`: toggle case of character (related `gU` and `gu`)
+        * `y`: yank (copy) text
+        * `p`: paste text
+        * `u`: undo an edit
+        </section>
+        <section data-markdown>
+        A lot of **commands** can be **combined** with a **motion**. This is the real power of Vim.  
+        Most commands also take a **count**.
+        </section>
+        <section data-markdown>
+        ### Actually deleting something
+        When you use the `d` command, Vim expects you to tell it what you actually want to delete
+        </section>
+        <section data-markdown>
+        ### Actually deleting something
+        * `dd`: simply delete the current line (linewise)
+        * `dj`: delete current and next line (linewise)
+        * `dtx`: delete until the next **x** on the current line
+        * `d2f(`: delete until the second occurance of **(**, including the **(** itself.
+        * `d/foo<enter>`: delete until the next occurance of **foo**
+        </section>
+        </section>
+
+          <section data-markdown>
+          text-objects
+          </section>
+
+          <section>This entire system is extensible. Plugins and mappings can add new motions and new commands</section>
 
         <section>
           <section>
@@ -262,6 +319,23 @@
         <section>mappings</section>
         <section>plugins</section>
         <section>pathogen</section>
+
+        <section data-markdown>
+        # Diving deeper
+        * Spellcheck
+        * Folds
+        * Vimscript
+        * ...
+        </section>
+
+        <section data-markdown>
+        # Suggested reading
+        * `:help`
+        * **Practical Vim** by Drew Neil
+        * Stack Overflow
+        * The Vim mailinglist
+        </section>
+
 
 
       </div>
