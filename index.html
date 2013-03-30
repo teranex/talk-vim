@@ -136,7 +136,6 @@
         <ul>
           <li>Let's you select text</li>
           <li>Started by pressing <code>v</code> in normal mode</li>
-          <li>Jump to the other end by pressing <code>o</code></li>
         </ul>
         <img src="images/modes-visual1.png">
         </section>
@@ -159,7 +158,10 @@
         </section>
         <section>
         <h3>Visual mode</h3>
-        When in normal mode, you can always use the <code>gv</code> to reselect the previously selected text in visual mode
+        <ul>
+          <li>When in normal mode, you can always use <code>gv</code> to reselect the previously selected text in visual mode</li>
+          <li>Jump to the other end by pressing <code>o</code></li>
+        </ul>
         </section>
         <section>
         <h3>Command-line mode</h3>
@@ -197,11 +199,34 @@
               <li><code>30gg</code>: jump to line 30</li>
             </ul>
           </section>
-          <section>
-            relative jumps
+          <section data-markdown>
+          ### Relative jumps
+          * `3j`: jump 3 lines down
+          * `12k`: jump 12 lines up
           </section>
-          <section>
-            inside the same line</section>
+          <section data-markdown>
+          ### Moving by words
+          * `e`: move to the end of the word
+          * `E`: move to the end of the WORD
+          * `w`: move to the next word
+          * `W`: move to the next WORD
+          * `b`: move back a word
+          * `B`: move back a WORD
+          </section>
+          <section data-markdown>
+          Wait a minute mister... a word, a WORD, ...WHAT??
+
+          * A **word** is a regular word, such as `javascript`
+          * A **WORD** is everything until the next whitespace, such as `xml:foobar`
+          </section>
+          <section data-markdown>
+          ### Search inside the same line
+          * `f`, `F` `<char>`: jump to (_find_) the next / previous `<char>` in the line
+          * `t`, `T` `<char>`: jump to before (_until_) the next / previous `<char>` in the line
+          * `;`: repeat
+          * `,`: repeat on opposite direction
+          </section>
+          <section>text-objects</section>
           <section>search</section>
         </section>
 
