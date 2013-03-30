@@ -321,7 +321,7 @@
         <section data-markdown>
         ### An example
         * The **tcomment** plugin adds the `gc` command to toggle comments
-        * **indent-text object** plugin adds the `ii` text-object to select everything with the same indent
+        * The **indent-text object** plugin adds the `ii` text-object to select everything with the same indent
 
         ```
 if ($foo) {
@@ -346,17 +346,74 @@ if ($foo) {
             <h2>The dot-command</h2>
             Repeats the last edit.
           </section>
-
         </section>
+
+        <section>
+        <section data-markdown>
+        # Marks
+        </section>
+        <section data-markdown>
+        ## Regular marks
+        Using marks, you can mark a location in a text file for later reference.
+
+        * lower-case marks are specific to a buffer
+        * upper-case marks are global
+        </section>
+        <section data-markdown>
+        ## Marking a location
+        To create a mark simply press `ma` to set mark **a**, `mE` to set mark **E** and so on.
+        </section>
+        <section data-markdown>
+        ## Jumping to a mark
+        * `'a`: using **'** followed by a mark will jump to the **beginning** of the line where that mark was placed.
+        * ``a`: using **`** followed by a mark will jump to the **exact location** where that mark was placed.
+
+        ---
+        These commands are also motions and can be combined with commands such as `d` and `c`.
+        </section>
+        <section data-markdown>
+        ## Automatic marks
+        Vim also automatically creates marks for you
+
+        * `1-9`: most recently used files
+        * &lt; &amp; &gt;: beginning and end of the current or most recent visual block
+        * `[` &amp; `]`: beginning and end of last modified block (for example from a paste)
+        * `'`: previous location (before a jump)
+        * `.`: position where the last change was made
+        * and a few other
+        </section>
+        <section data-markdown>
+        ## Back to visual mode
+        What actually happens in Visual mode? You tell Vim to set the **<** and **>** marks and then act up the region of text between those marks.  
+        Try pressing `:` with an active visual selection: you get **:'&lt;,'&gt;**. This specifies the range for the command to be the visual selection
+        </section>
+        </section>
+
+        <section>
+        <section data-markdown>
+        # Ranges
+        </section>
+        <section data-markdown>
+        When executing a command such as `:sort`, you can specify a range to act upon.
+        </section>
+        <section data-markdown>
+        * `:5,30`: from line 5 to line 30
+        * `:.,$`: from the current line (`.`) to the end of the file (`$`)
+        * `:%`: the entire file (this is a shorthand for `0,$`)
+        * `:'a,'b`: from mark **a** to mark **b**
+        * `:-5,+12`: 5 lines before the cursor to 12 lines after the cursor
+        </section>
+        </section>
+
+        <section>
+        Macros
+        </section>
+        
 
         <section>
         =
         >
         <
-        </section>
-
-        <section>
-        Macros
         </section>
 
         <section>Configuring vim</section>
@@ -369,6 +426,8 @@ if ($foo) {
         # Diving deeper
         * Spellcheck
         * Folds
+        * Registers
+        * Windows management
         * Vimscript
         * ...
         </section>
