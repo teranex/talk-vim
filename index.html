@@ -352,6 +352,15 @@ if ($foo) {
           ## The dot-command
           A useful example:
 
+          * delete the current line: `dd`
+          * delete the next line: `.`
+          * and again: `.`
+          * oops, didn't want to delete that last line: `u`
+          </section>
+          <section data-markdown>
+          ## The dot-command
+          Another useful example:
+
           * search for **bar** by typing `/bar<enter>`
           * change it to foo by typing `cefoo<Esc>`
           * jump to the next match: `n`
@@ -461,12 +470,29 @@ if ($foo) {
           `qxj@xq@x`: this will keep going down!
         </section>
         </section>
-        
 
         <section>
-        =
-        >
-        <
+        <section data-markdown>
+        # Formatting text
+        A quick intermezzo on how to format text
+        </section> 
+        <section data-markdown>
+        ## Indentation
+        * Set the correct indent settings (see [Vimcasts 2](http://vimcasts.org/episodes/tabs-and-spaces/))
+        * Then use the `=` command to let Vim correctly indent the specified text.
+          * `==`: current line
+          * `=ip`: current paragraph
+          * `gg=G`: the entire file
+        </section>
+        <section>
+        <h2>Change Indentation</h2>
+        <ul>
+          <li><code>&gt;</code>: add more indentation</li>
+          <li><code>&lt;</code>: remove Indentation</li>
+        </ul>
+        <hr>
+        <p>Example: <code>&gt;3j</code> indents 4 lines.<br>Then use <code>.</code> to indent more.</p>
+        </section>
         </section>
 
         <section>Configuring vim</section>
@@ -489,12 +515,10 @@ if ($foo) {
         # Suggested reading
         * `:help`
         * **Practical Vim** by Drew Neil
+        * Vimcasts (also by Drew Neil)
         * Stack Overflow
         * The Vim mailinglist
         </section>
-
-
-
       </div>
 
     </div>
