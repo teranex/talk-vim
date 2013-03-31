@@ -58,6 +58,7 @@
         </section>
 
         <section>
+        <section>
         <h2>The most interesting command?</h2>
         Any ideas?
         </section>
@@ -95,6 +96,7 @@
             <li><code>ctrl-]</code>: jump to the topic under the cursor</li>
             <li><code>ctrl-t</code>: jump back</li>
           </ul>
+        </section>
         </section>
         <!-- TODO: screenshot -->
         <!-- TODO: structuur van helpfile (tags!) -->
@@ -415,7 +417,7 @@ if ($foo) {
         # Ranges
         </section>
         <section data-markdown>
-        When executing a command such as `:sort`, you can specify a range to act upon.
+        When executing a command such as `:sort`, you can specify a range to act upon: `:12,18sort`.
         </section>
         <section data-markdown>
         * `:5,30`: from line 5 to line 30
@@ -495,18 +497,65 @@ if ($foo) {
         </section>
         </section>
 
-        <section>Configuring vim</section>
-        <section>options</section>
-        <section>mappings</section>
-        <section>plugins</section>
-        <section>pathogen</section>
+        <section>
+        <section data-markdown>
+        # Configuring vim
+        </section>
+        <section data-markdown>
+        Vim is **extremely configurable**. Customizing Vim is nice. But there is also the chance that it becomes completely different from a regular 'Vim'.
+        </section>
+        <section data-markdown>
+        When you want to start configuring Vim, it can be very interesting to have a look at other peoples configs. But don't just use somebody else's config!  
+        A good start is the [Vim-sensible](https://github.com/tpope/vim-sensible) plugin by Tim Pope.
+        </section>
+        <section>
+        <h2>Options</h2>
+        <p>There are just to many options to even start explaining them.</p>
+        <ul>
+          <li class="fragment">get the current value: <code>set listchars?</code></li>
+          <li class="fragment">boolean options: <code>set expandtab</code>, <code>set noexpandtab</code>, <code>set expandtab!</code></li>
+          <li class="fragment">values: <code>set tabstop=4</code></li>
+          <li class="fragment">lists: <code>set guioptions+=T</code>, <code>set guioptions-=m</code></li>
+        </ul>
+        </section>
+        <section data-markdown>
+        ## Keyboard mappings
+        Mapping your own custom keybindings is another very powerful method to configure Vim.
+
+        * `map`, `noremap`: map in most cases
+        * `nmap`, `nnoremap`: map in normal mode
+        * `vmap`, `vnoremap`: map in visual mode
+        * `imap`, `inoremap`: map in insert mode
+        * `cmap`, `cnoremap`: map in command-line mode
+        * and a few more..
+        </section>
+        <section data-markdown>
+        ## Plugins
+        Using plugins you can configure Vim even further and make it do really crazy stuff.
+
+        * **ctrlp**: quickly open files by typing parts of their name
+        * **fugitive + gitv**: awesome Git intergration
+        * **syntastic**: automatic syntax checking when saving
+        * **ultisnips**: snippets system
+        * **vimwiki**: entire wiki inside vim
+        </section>
+        <section data-markdown>
+        ## Managing plugins
+        If you are going to use more then 2 plugins, do yourself a favour and use a plugin manager
+
+        * **pathogen**: my preference, clean and simple
+        * **Vundle**: downloads plugins for you
+        * **vim-addon-manager**: downloads plugins for you and has dependency-management
+        </section>
+        </section>
 
         <section data-markdown>
         # Diving deeper
         * Spellcheck
         * Folds
-        * Registers
-        * Windows management
+        * Window management
+        * tags, vimgrep
+        * abbreviations
         * Vimscript
         * ...
         </section>
