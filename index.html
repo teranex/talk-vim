@@ -258,12 +258,12 @@
         ## Commands
         </section>
         <section data-markdown>
-        **Commands** are how you make **do something** in Vim.
+        **Commands** are how you tell Vim to **do something**.
         </section>
         <section data-markdown>
         ### Some commands
-        * `d`: delete something
-        * `c`: change something (delete and go to insert mode)
+        * `d`: delete text
+        * `c`: change text (delete and go to insert mode)
         * `r`: replace a single character
         * `v`: go to Visual mode
         * `~`: toggle case of character (related `gU` and `gu`)
@@ -274,6 +274,8 @@
         <section data-markdown>
         A lot of **commands** can be **combined** with a **motion**. This is the real power of Vim.  
         Most commands also take a **count**.
+
+        `[count] Command [count] Motion`
         </section>
         <section data-markdown>
         ### Actually deleting something
@@ -346,6 +348,16 @@ if ($foo) {
             <h2>The dot-command</h2>
             Repeats the last edit.
           </section>
+          <section data-markdown>
+          ## The dot-command
+          A useful example:
+
+          * search for **bar** by typing `/bar<enter>`
+          * change it to foo by typing `cefoo<Esc>`
+          * jump to the next match: `n`
+          * also replace: `.`
+          * repeat..
+          </section>
         </section>
 
         <section>
@@ -384,7 +396,7 @@ if ($foo) {
         </section>
         <section data-markdown>
         ## Back to visual mode
-        What actually happens in Visual mode? You tell Vim to set the **<** and **>** marks and then act up the region of text between those marks.  
+        What actually happens in Visual mode? You tell Vim to set the **<** and **>** marks and then act on the region of text between those marks.  
         Try pressing `:` with an active visual selection: you get **:'&lt;,'&gt;**. This specifies the range for the command to be the visual selection
         </section>
         </section>
@@ -406,7 +418,48 @@ if ($foo) {
         </section>
 
         <section>
-        Macros
+        <section data-markdown>
+        # Macros
+        </section>
+        <section data-markdown>
+        While the **dot-command** can be very useful and should be used as much as possible,
+        sometimes you will want to **repeatedly** perform a **more complex command**
+        </section>
+        <section data-markdown>
+        ## Recording a macro
+        To record a macro:
+
+        * `qa`: start recording into **register a**
+        * `[commands]`: perform all the necessary commands. This can be anything you would normally do
+        * `q`: press `q` to stop recording the macro
+        </section>
+        <section data-markdown>
+        ## Registers you say??
+        Instead of just a single clipboard Vim uses registers for yank/paste, macros and a few other things.
+        </section>
+        <section data-markdown>
+        ### Different registers
+        * `a-z`: Are the regular registers you can freely use
+        * `A-Z`: Are the same as *a-z* but when yanking text it is appended
+        * `0-9`: 0 = most recent yank, 1-9 previous deletes
+        * `"`: the unnamed register. This is the default when no register is specified
+        * `+` &amp; `*`: system clipboards
+        * `_`: blackhole register
+        * `.`: last inserted text
+        * check `:help registers` for a few other and more information
+        </section>
+        <section data-markdown>
+        ## Back to macros!
+        </section>
+        <section data-markdown>
+        ## Executing a macro
+        `@a`: **execute** the macro which was recorded in **register a**
+
+        * This also takes a count
+        * Quickly repeat last macro with `@@`
+        * Macros can even execute themselves!  
+          `qxj@xq@x`: this will keep going down!
+        </section>
         </section>
         
 
